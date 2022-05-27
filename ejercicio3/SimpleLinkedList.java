@@ -1,5 +1,9 @@
 package ejercicio3;
 
+/**
+ * Esta clase almacena el primer nodo y el tamaño de la lista simple,
+ * ademas de añadir nodos a la lista y eliminarlos
+ */
 public class SimpleLinkedList {
 	private Node first;
 	private int size;
@@ -29,7 +33,12 @@ public class SimpleLinkedList {
 	public void setSize(int size) {
 		this.size = size;
 	}
-
+	
+	/**
+	 * Pre: ---
+	 * Post: Este comprueba el tamaño de la lista y si esta a 0
+	 * te inserta el nodo en la primera posicion, sino en la siguiente.
+	 */
 	public boolean add(Node node) {
 		try {
 			if (size==0) {
@@ -47,6 +56,11 @@ public class SimpleLinkedList {
 		}
 	}
 	
+	/**
+	 * Pre: ---
+	 * Post: Este comprueba la posicion que le manda y si esta a 0
+	 * te inserta el nodo en la primera posicion, sino en la posicion que se mande.
+	 */
 	public boolean add(int position, Node node) {
 		if(position==0) {
 			node.setNext(first);
@@ -65,6 +79,11 @@ public class SimpleLinkedList {
 		return true;
 	}
 	
+	/**
+	 * Pre: ---
+	 * Post: Este comprueba la posicion que se le manda y se elimina el nodo que esta
+	 * en esa posicion.
+	 */
 	public boolean delete(int position) {
 		if(position==0) {
 			first = first.getNext();
@@ -87,6 +106,11 @@ public class SimpleLinkedList {
 		return true;
 	}
 	
+	/**
+	 * Pre: ---
+	 * Post: Este compara todos los nodos y va cogiendo el mayor,
+	 * cuando finaliza elimina el mayor.
+	 */
 	public void deleteMayor() {
 		Node p = first;
 		Node node = first;
@@ -100,6 +124,10 @@ public class SimpleLinkedList {
 		delete(mayor);
 	}
 	
+	/**
+	 * Pre: ---
+	 * Post: Este metodo te recorre la lista y te la muestra nodo por nodo.
+	 */
 	public void show() {
 		Node p = first;
 		for (int i=0; i<size; i++) {

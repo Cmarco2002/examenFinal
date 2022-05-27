@@ -1,5 +1,9 @@
 package ejercicio3;
 
+/**
+ * Esta clase se almacena el contenido de un nodo
+ * y el siguiente nodo.
+ */
 public class Node {
 	private int content;
 	private Node next;

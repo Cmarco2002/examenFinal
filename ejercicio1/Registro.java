@@ -1,5 +1,9 @@
 package ejercicio1;
 
+/**
+ * Esta clase se ha creado con el objetivo de almacenar los registros del 
+ * fichero leido.
+ */
 public class Registro {
 	private int id_registro;
 	private String letra;

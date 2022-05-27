@@ -5,7 +5,17 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/**
+ * Esta clase lee un fichero csv y muestra las parejas por localidad
+ * divorciadas con y sin sin separacion previa.
+ */
 public class Ejercicio2 {
+	
+	/**
+	 * Pre: ---
+	 * Post: Este metodo lee un fichero csv y muestra las parejas que se han divorciado con
+	 * y sin separacion previa y la localidad con mayor numero de divorcios.
+	 */
 	public static void leerFichero(String nombre, ArrayList<Divorcios> divorcios) {
 		File file = new File(nombre);
 		int separacionPrevia=0;
@@ -31,7 +41,7 @@ public class Ejercicio2 {
 				}
 				localidad = lineaSeparada[0];
 				lineaSeparada [3]= lineaSeparada [3].replace(".", "");
-				cuenta = Integer.parseInt(lineaSeparada[3]);
+				//cuenta = Integer.parseInt(lineaSeparada[3]);
 				for (int i=0; i<divorcios.size(); i++) {
 					if (localidad.equals(divorcios.get(i).getLocalidad())) {
 						encontrado = true;
@@ -62,8 +72,12 @@ public class Ejercicio2 {
 		}
 	}
 	
+	/**
+	 * Pre: ---
+	 * Post: Este metodo manda un arraylist de divorcios
+	 * y la ruta donde esta almacenado el fichero para leerlo.
+	 */
 	public static void main(String[] args) {
-		//Leemos el fichero
 		String nombre = "C:\\Users\\Carlos\\Desktop\\Divorcios.csv";
 		ArrayList<Divorcios> divorcios = new ArrayList<Divorcios>();
 		leerFichero(nombre, divorcios);

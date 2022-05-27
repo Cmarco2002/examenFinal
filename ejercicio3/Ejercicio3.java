@@ -1,6 +1,16 @@
 package ejercicio3;
 
+/**
+ * Esta clase se ha creado con el objetivo de eliminar el nodo
+ * que mayor numero contenga.
+ */
 public class Ejercicio3 {
+	
+	/**
+	 * Pre: ---
+	 * Post: Este metodo añade nodos a la lista simple enlazada y 
+	 * luego los compara y elimina el mayor.
+	 */
 	public static void main(String[] args) {
 		SimpleLinkedList l = new SimpleLinkedList();
 		Node n1 = new Node(20, null);

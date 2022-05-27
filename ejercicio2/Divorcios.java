@@ -1,5 +1,9 @@
 package ejercicio2;
 
+/**
+ * Esta clase se ha creado con el objetivo de almacenar las localidades y 
+ * la cantidad de divorcios por localidad.
+ */
 public class Divorcios {
 	private String localidad;
 	private int cuenta;
