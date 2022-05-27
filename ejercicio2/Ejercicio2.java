@@ -14,15 +14,15 @@ public class Ejercicio2 {
 		int cuenta = 0;
 		int contador = 0;
 		boolean encontrado = false;
-		String mayor = divorcios.get(0).getLocalidad();
-		int cuentaMayor = divorcios.get(0).getCuenta();
+		String mayor = localidad;
+		int cuentaMayor = cuenta;
 		try {
 			Scanner f = new Scanner(file);
 			//Vamos linea por linea
 			while (f.hasNextLine()) {
 				String linea = f.nextLine();
 				//Spliteamos los datos separados por comas
-				String[] lineaSeparada = linea.split(",");
+				String[] lineaSeparada = linea.split(";");
 				//Contamos el numero de parejas con y sin separacion previa
 				if (lineaSeparada[1].equalsIgnoreCase("si")) {
 					separacionPrevia++;
@@ -30,8 +30,9 @@ public class Ejercicio2 {
 					sinSeparacionPrevia++;
 				}
 				localidad = lineaSeparada[0];
+				lineaSeparada [3]= lineaSeparada [3].replace(".", "");
 				cuenta = Integer.parseInt(lineaSeparada[3]);
-				for (int i=0; i<=divorcios.size(); i++) {
+				for (int i=0; i<divorcios.size(); i++) {
 					if (localidad.equals(divorcios.get(i).getLocalidad())) {
 						encontrado = true;
 						contador = i;
@@ -47,7 +48,7 @@ public class Ejercicio2 {
 			}
 			System.out.println("El numero de parejas con separacion previa es: "+ separacionPrevia);
 			System.out.println("El numero de parejas sin separacion previa es: "+ sinSeparacionPrevia);
-			for (int i=0; i<=divorcios.size(); i++) {
+			for (int i=0; i<divorcios.size(); i++) {
 				for (int j=0; j<divorcios.size(); j++) {
 					if (divorcios.get(i).getCuenta()<divorcios.get(j).getCuenta()) {
 						mayor=divorcios.get(j).getLocalidad();					

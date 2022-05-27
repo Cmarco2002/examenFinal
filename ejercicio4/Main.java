@@ -4,12 +4,11 @@ import java.util.Scanner;
 
 public class Main {
 	public static void multiplicar(int num, int contador) {
-		if (contador % 2 == 0) {
-			System.out.println(num + " x "+ contador + " = "+  num*contador);
-			multiplicar(num, contador-1);
-		} else if(contador == 101) {
-		} else {
-			multiplicar(num, contador + 1);
+		if (contador > 1) {
+			multiplicar(num, contador - 1);
+			if (contador % 2 == 0) {
+				System.out.println(num + " x " + contador + " = " + (num * contador));
+			}
 		}
 	}
 
@@ -17,7 +16,7 @@ public class Main {
 		Scanner entrada = new Scanner(System.in);
 		System.out.println("Introduzca un entero: ");
 		int num = entrada.nextInt();
-		int contador = 0;
+		int contador = 100;
 		multiplicar(num,contador);
 	}
 }
